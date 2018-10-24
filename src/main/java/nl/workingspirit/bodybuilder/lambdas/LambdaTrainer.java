@@ -19,7 +19,7 @@ public class LambdaTrainer {
         System.out.println("End now the squares");
         numberList.stream()
                 .distinct()
-                .filter(n -> n %2 == 0)
+                .filter(new EvenTestingPredicate())
                 .map(n -> n * n)
                 .forEach(System.out::println);
 
@@ -33,5 +33,6 @@ public class LambdaTrainer {
 
         numberList.stream().filter(n -> n > 15)
         .peek(n -> System.out.println("Dit mag je niet zien: "+n));
+
     }
 }
